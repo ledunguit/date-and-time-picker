@@ -1,4 +1,4 @@
-﻿(function ($) {
+(function ($) {
     'use strict';
     $.fn.dateTimePicker = function (options) {
 
@@ -7,13 +7,13 @@
             dateFormat: "YYYY-MM-DD HH:mm",
             showTime: true,
             locale: 'en',
-            positionShift: { top: 20, left: 0},
+            positionShift: { top: 20, left: 0 },
             title: "Select Date and Time",
             buttonTitle: "Select"
         }, options);
         moment.locale(settings.locale);
         var elem = this;
-        var limitation = {"hour": 23, "minute": 59};
+        var limitation = { "hour": 23, "minute": 59 };
         var mousedown = false;
         var timeout = 800;
         var selectDate = settings.selectData == "now" ? moment() : moment(settings.selectData, settings.dateFormat);
@@ -60,7 +60,7 @@
                 var $content = createContent();
                 $body.append($content);
                 var offset = elem.offset();
-                $content.css({top: (offset.top + settings.positionShift.top) + "px", left: (offset.left + settings.positionShift.left) + "px"});
+                $content.css({ top: (offset.top + settings.positionShift.top) + "px", left: (offset.left + settings.positionShift.left) + "px" });
                 feelDates(selectDate);
                 $win.on('click', function () {
                     $content.remove();
@@ -385,4 +385,3 @@
     }
 
 }(jQuery));
-// fa-caret-down
